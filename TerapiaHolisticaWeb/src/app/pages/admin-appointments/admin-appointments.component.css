@@ -1,0 +1,369 @@
+.admin-appointments {
+  min-height: 100vh;
+
+  padding: 50px 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f7eff7 0%,
+      #fdfaf6 50%,
+      #eaf7f6 100%
+    );
+}
+
+.admin-container {
+  width: min(1100px, 95%);
+
+  margin: 0 auto;
+}
+
+.admin-header {
+  margin-bottom: 30px;
+
+  text-align: center;
+}
+
+.admin-header > span {
+  color: #805080;
+
+  font-size: 28px;
+}
+
+.admin-header h1 {
+  margin: 8px 0;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size: 32px;
+
+  font-weight: 500;
+
+  color: #583e58;
+}
+
+.admin-header p {
+  margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 13px;
+
+  color: #756b75;
+}
+
+.appointments-table-wrapper {
+  overflow-x: auto;
+
+  background: #ffffff;
+
+  border: 1px solid #e2d5e3;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 5px 18px rgba(75, 45, 75, 0.08);
+}
+
+table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+th {
+  padding: 14px;
+
+  background: #765177;
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  text-align: left;
+}
+
+td {
+  padding: 13px 14px;
+
+  border-bottom: 1px solid #eee6ef;
+
+  color: #604461;
+
+  font-size: 11px;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.status {
+  display: inline-block;
+
+  padding: 5px 9px;
+
+  border-radius: 15px;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+.status.confirmed {
+  background: #e7f4eb;
+
+  color: #34704a;
+}
+
+.status.pending {
+  background: #fff3dc;
+
+  color: #96651d;
+}
+
+.status.cancelled {
+  background: #f8e5e5;
+
+  color: #984747;
+}
+
+.cancel-button {
+  padding: 7px 12px;
+
+  border: 1px solid #d8bcbc;
+
+  border-radius: 15px;
+
+  background: #ffffff;
+
+  color: #984747;
+
+  font-size: 9px;
+
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  background: #f8e5e5;
+}
+
+.no-appointments {
+  padding: 60px 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2d5e3;
+
+  border-radius: 12px;
+
+  text-align: center;
+}
+
+.no-appointments span {
+  color: #805080;
+
+  font-size: 28px;
+}
+
+.no-appointments h3 {
+  margin: 10px 0 5px;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  color: #583e58;
+}
+
+.no-appointments p {
+  margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 11px;
+
+  color: #756b75;
+}
+
+@media (max-width: 600px) {
+
+  .admin-appointments {
+    padding: 35px 10px;
+  }
+
+  .admin-header h1 {
+    font-size: 25px;
+  }
+
+  th,
+  td {
+    padding: 10px;
+  }
+
+}
+
+.logout-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+
+  border: 1px solid #6d3675;
+  border-radius: 8px;
+
+  background: transparent;
+  color: #6d3675;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.logout-button:hover {
+  background: #6d3675;
+  color: #ffffff;
+}
+
+.message-cell {
+min-width: 220px;
+max-width: 300px;
+white-space: normal;
+word-break: break-word;
+}
+
+.whatsapp-button {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+
+width: 100%;
+min-width: 90px;
+
+margin-bottom: 8px;
+padding: 8px 12px;
+
+border: 1px solid #25d366;
+border-radius: 20px;
+
+background: #25d366;
+color: #ffffff;
+
+font-family: inherit;
+font-size: 12px;
+font-weight: 600;
+
+cursor: pointer;
+
+transition:
+background 0.2s ease,
+transform 0.2s ease,
+box-shadow 0.2s ease;
+}
+
+.whatsapp-button {
+background: #1ebe5d;
+box-shadow: 0 3px 8px rgba(37, 211, 102, 0.25);
+}
+
+.whatsapp-button {
+transform: scale(0.97);
+}
+
+.appointments-table-wrapper th,
+.appointments-table-wrapper td {
+min-width: 120px;
+text-align: center;
+}
+
+.confirm-button {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+
+width: 100%;
+min-width: 90px;
+
+margin-bottom: 8px;
+padding: 8px 12px;
+
+border: 1px solid #7a9b76;
+border-radius: 20px;
+
+background: #7a9b76;
+color: #ffffff;
+
+font-family: inherit;
+font-size: 12px;
+font-weight: 600;
+
+cursor: pointer;
+
+transition:
+background 0.2s ease,
+transform 0.2s ease,
+box-shadow 0.2s ease;
+}
+
+.confirm-button:hover {
+background: #668662;
+box-shadow: 0 3px 8px rgba(122, 155, 118, 0.25);
+}
+
+.confirm-button:active {
+transform: scale(0.97);
+}
+
+.admin-actions {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 12px;
+margin: 25px 0;
+flex-wrap: wrap;
+}
+
+.home-button,
+.logout-button {
+box-sizing: border-box;
+height: 42px;
+padding: 0 20px;
+margin: 0;
+border-radius: 25px;
+font-family: inherit;
+font-size: 13px;
+font-weight: 600;
+line-height: 42px;
+cursor: pointer;
+transition: all 0.2s ease;
+}
+
+.home-button {
+border: 1px solid #8a9a78;
+background: #8a9a78;
+color: #ffffff;
+}
+
+.home-button {
+background: #005fdb;
+border-color: #005fdb;
+}
+
+.logout-button {
+border: 1px solid #b87979;
+background: #b87979;
+color: #ffffff;
+}
+
+.logout-button {
+background: #a96565;
+border-color: #a96565;
+}

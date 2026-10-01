@@ -1,0 +1,156 @@
+/* =========================================
+   SOBRE MÍ
+========================================= */
+
+.about-section {
+  width: 100%;
+  background: #69406e;
+  padding: 100px 100px; /* Más espacio arriba y abajo */
+  border-bottom: 5px solid #69406e;
+}
+
+
+/* =========================================
+   CONTENEDOR
+========================================= */
+
+.about-container {
+
+  width: min(900px, 92%);   /* Ancho controlado para que no llegue a las orillas */
+  margin: 0 auto;           /* Lo centra automáticamente en la pantalla */
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  align-items: center;
+  gap: 35px;
+  
+  
+  /* AQUÍ ESTÁ LA MAGIA DEL DISEÑO DE TARJETA */
+  background: #fffdf9;      /* El color blanco/crema de tu fondo */
+  padding: 40px 45px;       /* Margen interno para que el contenido no pegue a los bordes */
+  border-radius: 20px;      /* Esquinas redondeadas */
+  box-shadow: 0 8px 25px rgba(70, 30, 70, 0.08); /* Una ligera sombra elegante */
+  border: 1px solid rgba(105, 64, 110, 0.15);
+
+ 
+}
+
+
+/* =========================================
+   FOTO
+========================================= */
+
+.about-image-container {
+  width: 150px;  /* Aumentamos ligeramente el tamaño de la foto */
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #4b145c;
+  box-shadow: 0 4px 15px rgba(70, 30, 70, 0.25);
+  margin: 0 auto; /* Asegura que la foto esté centrada en su espacio */
+  flex-shrink: 0;
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* =========================================
+   CONTENIDO
+========================================= */
+
+.about-content {
+  min-width: 0;
+}
+
+.about-content h2 {
+  margin: 0 0 6px;
+  
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #765177;
+}
+
+.about-content h3 {
+  margin: 0 0 10px;
+  font-size: 1.8rem; /* Nombre de Nora más destacado */
+  color: #5c465b;
+}
+
+
+/* =========================================
+   PROFESIÓN
+========================================= */
+
+.about-profession {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #4b145c; /* Un toque de color para la profesión */
+}
+
+
+/* =========================================
+   DESCRIPCIÓN
+========================================= */
+
+.about-description {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6; /* Mayor separación entre líneas para lectura cómoda */
+  color: #51414f;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 750px) {
+  .about-container {
+    grid-template-columns: 130px 1fr;
+    gap: 20px;
+  }
+
+  .about-image-container {
+    width: 130px;
+    height: 130px;
+  }
+  
+  .about-content h3 {
+    font-size: 1.5rem;
+  }
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 550px) {
+  .about-section {
+    padding: 25px 15px;
+  }
+
+  .about-container {
+    width: 95%;
+    grid-template-columns: 1fr; /* En celular se acomoda en columna (foto arriba, texto abajo) */
+    text-align: center; /* Centramos todo para que se vea armónico en móvil */
+    gap: 15px;
+  }
+
+  .about-image-container {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto; /* Centra la foto en pantallas chicas */
+  }
+
+  .about-content h3 {
+    font-size: 1.4rem;
+  }
+}

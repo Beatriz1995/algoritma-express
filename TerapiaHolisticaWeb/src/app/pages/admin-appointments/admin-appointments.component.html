@@ -1,0 +1,371 @@
+<section class="admin-appointments">
+
+<div class="admin-container">
+
+<!-- =========================================
+     ENCABEZADO
+========================================== -->
+
+<div class="admin-header">
+
+  <span>
+    ✧
+  </span>
+
+  <h1>
+    Administración de citas
+  </h1>
+
+  <p>
+    Consulta y administra las citas registradas.
+  </p>
+
+</div>
+
+
+<!-- =========================================
+     ACCIONES DEL ADMINISTRADOR
+========================================== -->
+
+<div class="admin-actions">
+
+  <button
+    type="button"
+    class="home-button"
+    (click)="goHome()"
+  >
+    Volver al inicio
+  </button>
+
+  <button
+    type="button"
+    class="logout-button"
+    (click)="logout()"
+  >
+    Cerrar sesión
+  </button>
+
+</div>
+
+
+<!-- =========================================
+     CITAS
+========================================== -->
+
+@if (appointments.length > 0) {
+
+  <div class="appointments-table-wrapper">
+
+    <table>
+
+      <thead>
+
+        <tr>
+
+          <th>
+            Fecha
+          </th>
+
+          <th>
+            Hora
+          </th>
+
+          <th>
+            Terapia
+          </th>
+
+          <th>
+            Cliente
+          </th>
+
+          <th>
+            Teléfono
+          </th>
+
+          <th>
+            Correo
+          </th>
+
+          <th>
+            Mensaje
+          </th>
+
+          <th>
+            Estado
+          </th>
+
+          <th>
+            Acción
+          </th>
+
+        </tr>
+
+      </thead>
+
+
+      <tbody>
+
+        @for (
+          appointment of appointments;
+          track appointment.id
+        ) {
+
+          <tr>
+
+            <!-- FECHA -->
+
+            <td>
+              {{ appointment.date | date:'d \'de\' MMMM \'de\' y':'':'es-MX' }}
+            </td>
+
+
+            <!-- HORA -->
+
+            <td>
+              {{ appointment.time }}
+            </td>
+
+
+            <!-- TERAPIA -->
+
+            <td>
+              {{ appointment.therapyName }}
+            </td>
+
+
+            <!-- CLIENTE -->
+
+            <td>
+
+              @if (appointment.clientName) {
+
+                {{ appointment.clientName }}
+
+              } @else {
+
+                <span>
+                  No proporcionado
+                </span>
+
+              }
+
+            </td>
+
+
+            <!-- TELÉFONO -->
+
+            <td>
+
+              @if (appointment.clientPhone) {
+
+                {{ appointment.clientPhone }}
+
+              } @else {
+
+                <span>
+                  No proporcionado
+                </span>
+
+              }
+
+            </td>
+
+
+            <!-- CORREO -->
+
+            <td>
+
+              @if (appointment.clientEmail) {
+
+                {{ appointment.clientEmail }}
+
+              } @else {
+
+                <span>
+                  No proporcionado
+                </span>
+
+              }
+
+            </td>
+
+
+            <!-- MENSAJE -->
+
+            <td class="message-cell">
+
+              @if (appointment.message) {
+
+                {{ appointment.message }}
+
+              } @else {
+
+                <span>
+                  Sin mensaje
+                </span>
+
+              }
+
+            </td>
+
+
+            <!-- ESTADO -->
+
+            <td>
+
+              <span
+                class="status"
+                [class.confirmed]="
+                  appointment.status === 'confirmed'
+                "
+                [class.pending]="
+                  appointment.status === 'pending'
+                "
+                [class.cancelled]="
+                  appointment.status === 'cancelled'
+                "
+              >
+
+                @if (
+                  appointment.status === 'confirmed'
+                ) {
+
+                  Confirmada
+
+                } @else if (
+                  appointment.status === 'pending'
+                ) {
+
+                  Pendiente
+
+                } @else if (
+                  appointment.status === 'cancelled'
+                ) {
+
+                  Cancelada
+
+                } @else {
+
+                  {{ appointment.status }}
+
+                }
+
+              </span>
+
+            </td>
+
+
+            <!-- ACCIONES -->
+
+            <td>
+
+              <!-- CONFIRMAR -->
+
+              @if (
+                appointment.status === 'pending'
+              ) {
+
+                <button
+                  type="button"
+                  class="confirm-button"
+                  (click)="
+                    confirmAppointment(
+                      appointment.id
+                    )
+                  "
+                >
+                  Confirmar
+                </button>
+
+              }
+
+
+              <!-- WHATSAPP -->
+
+              @if (appointment.clientPhone) {
+
+                <button
+                  type="button"
+                  class="whatsapp-button"
+                  (click)="
+                    openWhatsApp(
+                      appointment.clientPhone,
+                      appointment.clientName
+                    )
+                  "
+                >
+                  WhatsApp
+                </button>
+
+              }
+
+
+              <!-- CANCELAR -->
+
+              @if (
+                appointment.status !== 'cancelled'
+              ) {
+
+                <button
+                  type="button"
+                  class="cancel-button"
+                  (click)="
+                    cancelAppointment(
+                      appointment.id
+                    )
+                  "
+                >
+                  Cancelar
+                </button>
+
+              } @else {
+
+                <span>
+                  Sin acciones
+                </span>
+
+              }
+
+            </td>
+
+          </tr>
+
+        }
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+}
+
+
+<!-- =========================================
+     SIN CITAS
+========================================== -->
+
+@else {
+
+  <div class="no-appointments">
+
+    <span>
+      ✧
+    </span>
+
+    <h3>
+      No hay citas registradas
+    </h3>
+
+    <p>
+      Cuando un cliente reserve una sesión,
+      aparecerá aquí.
+    </p>
+
+  </div>
+
+}
+
+</div>
+
+</section>

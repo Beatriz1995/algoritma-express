@@ -1,0 +1,483 @@
+/* =========================================
+   GALERÍA
+========================================= */
+
+.gallery-section {
+  width: 100%;
+
+  padding: 50px 15px 55px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #faf5fa 100%
+    );
+
+  color: #403640;
+}
+
+
+/* =========================================
+   CONTENEDOR
+========================================= */
+
+.gallery-container {
+  width: min(1100px, 94%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   ENCABEZADO
+========================================= */
+
+.gallery-header {
+  margin-bottom: 30px;
+
+  text-align: center;
+}
+
+.gallery-decoration {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #805080;
+
+  font-size: 24px;
+}
+
+.gallery-header h2 {
+  margin: 0;
+
+
+  font-size: clamp(28px, 4vw, 37px);
+
+  font-weight: 500;
+
+  letter-spacing: 1px;
+
+  color: #654666;
+}
+
+.gallery-header p {
+  width: min(650px, 95%);
+
+  margin: 12px auto 0;
+
+
+  font-size: 12px;
+
+  line-height: 1.6;
+
+  color: #756b75;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.gallery-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 17px;
+}
+
+
+/* =========================================
+   TARJETA
+========================================= */
+
+.gallery-card {
+  position: relative;
+
+  height: 230px;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  background: #eee;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 15px
+    rgba(70, 40, 70, 0.12);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 10px 25px
+    rgba(70, 40, 70, 0.2);
+}
+
+
+/* =========================================
+   IMAGEN
+========================================= */
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.5s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.08);
+}
+
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.gallery-overlay {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 35px 15px 15px;
+
+  background:
+    linear-gradient(
+      transparent,
+      rgba(45, 25, 45, 0.85)
+    );
+
+  color: #ffffff;
+
+  transform: translateY(7px);
+
+  transition:
+    transform 0.3s ease;
+}
+
+.gallery-card:hover .gallery-overlay {
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   CATEGORÍA
+========================================= */
+
+.gallery-category {
+  display: block;
+
+  margin-bottom: 3px;
+
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.3px;
+
+  text-transform: uppercase;
+
+  opacity: 0.85;
+}
+
+
+/* =========================================
+   TÍTULO
+========================================= */
+
+.gallery-overlay h3 {
+  margin: 0;
+
+
+  font-size: 16px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================
+   VER IMAGEN
+========================================= */
+
+.gallery-view {
+  display: block;
+
+  margin-top: 5px;
+
+
+  font-size: 10px;
+
+  opacity: 0.85;
+}
+
+
+/* =========================================
+   MODAL
+========================================= */
+
+.gallery-modal {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  padding: 25px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    rgba(35, 20, 35, 0.88);
+
+  animation:
+    modalFadeIn 0.25s ease;
+}
+
+
+@keyframes modalFadeIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+/* =========================================
+   CONTENIDO MODAL
+========================================= */
+
+.gallery-modal-content {
+  position: relative;
+
+  width: min(850px, 95vw);
+
+  max-height: 90vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 15px 50px
+    rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================
+   IMAGEN MODAL
+========================================= */
+
+.gallery-modal-content img {
+  width: 100%;
+
+  max-height: 75vh;
+
+  display: block;
+
+  object-fit: contain;
+
+  background: #1f1a20;
+}
+
+
+/* =========================================
+   CERRAR
+========================================= */
+
+.gallery-close {
+  position: absolute;
+
+  z-index: 2;
+
+  top: 10px;
+  right: 10px;
+
+  width: 35px;
+  height: 35px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    rgba(40, 25, 40, 0.75);
+
+  color: #ffffff;
+
+  font-size: 25px;
+
+  line-height: 30px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.gallery-close:hover {
+  transform: scale(1.08);
+
+  background:
+    rgba(40, 25, 40, 0.95);
+}
+
+
+/* =========================================
+   TEXTO MODAL
+========================================= */
+
+.modal-caption {
+  width: 100%;
+
+  padding: 14px 20px;
+
+  text-align: center;
+}
+
+.modal-caption span {
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+
+  color: #927195;
+
+  text-transform: uppercase;
+}
+
+.modal-caption h3 {
+  margin: 4px 0 0;
+
+
+  font-size: 18px;
+
+  font-weight: 500;
+
+  color: #604461;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+  .gallery-grid {
+    gap: 12px;
+  }
+
+  .gallery-card {
+    height: 200px;
+  }
+
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 600px) {
+
+  .gallery-section {
+    padding: 40px 10px 45px;
+  }
+
+  .gallery-container {
+    width: 96%;
+  }
+
+  .gallery-header {
+    margin-bottom: 23px;
+  }
+
+  .gallery-header h2 {
+    font-size: 27px;
+  }
+
+  .gallery-header p {
+    font-size: 10px;
+  }
+
+  .gallery-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 10px;
+  }
+
+  .gallery-card {
+    height: 170px;
+
+    border-radius: 8px;
+  }
+
+  .gallery-overlay {
+    padding: 25px 10px 10px;
+  }
+
+  .gallery-overlay h3 {
+    font-size: 13px;
+  }
+
+  .gallery-view {
+    font-size: 10px;
+  }
+
+}
+
+
+/* =========================================
+   CELULAR PEQUEÑO
+========================================= */
+
+@media (max-width: 380px) {
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-card {
+    height: 220px;
+  }
+
+}

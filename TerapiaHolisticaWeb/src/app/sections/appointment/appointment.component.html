@@ -1,0 +1,304 @@
+<section class="appointment-section">
+
+<div class="appointment-container">
+
+<!-- =========================================
+     ENCABEZADO
+========================================== -->
+
+<div class="appointment-header">
+
+  <span class="appointment-badge">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7 2v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7zm12 8v10H5V10h14zM7 12h5v5H7v-5z"/>
+    </svg>
+    Agenda tu cita aquí
+  </span>
+
+  <h2>
+    Regálate un momento de
+    <br>
+    sanación y equilibrio
+  </h2>
+
+  <p>
+    Reserva tu sesión en línea seleccionando tu terapia favorita.
+  </p>
+
+  <ol class="appointment-steps">
+    <li>
+      <span class="step-number">1</span>
+      Elige tu terapia
+    </li>
+    <li>
+      <span class="step-number">2</span>
+      Fecha y horario
+    </li>
+    <li>
+      <span class="step-number">3</span>
+      Tus datos
+    </li>
+  </ol>
+
+</div>
+
+
+<!-- =========================================
+     SELECCIÓN DE TERAPIA (GRID)
+========================================== -->
+
+<div class="therapy-selection">
+
+  <h3>
+    Selecciona una terapia para comenzar
+  </h3>
+
+  <div class="therapy-grid">
+
+    @for (therapy of therapies; track therapy.id) {
+
+      <button
+        type="button"
+        class="therapy-card"
+        (click)="openCalendarModal(therapy)"
+      >
+
+        <span class="therapy-icon">
+          ✧
+        </span>
+
+        <span class="therapy-name">
+          {{ therapy.name }}
+        </span>
+
+        <span class="therapy-description">
+          {{ therapy.description }}
+        </span>
+
+        <span class="therapy-duration">
+          {{ therapy.duration }}
+        </span>
+
+      </button>
+
+    }
+
+  </div>
+
+</div>
+
+
+<!-- =========================================
+     MODAL 1: CALENDARIO Y HORARIOS (COMPACTO)
+========================================== -->
+
+@if (isCalendarModalOpen && selectedTherapy) {
+
+  <div class="confirmation-overlay">
+
+    <div class="confirmation-modal compact-calendar-modal">
+
+      <button
+        type="button"
+        class="confirmation-close"
+        (click)="closeCalendarModal()"
+        aria-label="Cerrar"
+      >
+        ×
+      </button>
+
+      <div class="confirmation-icon">
+        ✧
+      </div>
+
+      <h3>{{ selectedTherapy.name }}</h3>
+      <p class="confirmation-description">
+        Selecciona el día y el horario de tu preferencia.
+      </p>
+
+
+      <!-- CONTENEDOR FLEX PARA JUNTAR CALENDARIO Y HORARIOS EN PANTALLAS GRANDES -->
+      <div class="calendar-times-wrapper">
+
+        <!-- CALENDARIO MENSUAL COMPACTO -->
+        <div class="appointment-calendar mini-calendar">
+          
+          <div class="calendar-header">
+            <button
+              type="button"
+              class="calendar-nav-button"
+              [disabled]="isMinMonth()"
+              (click)="previousMonth()"
+            >
+              ‹
+            </button>
+
+            <h4>
+              {{ getCurrentMonthName() }}
+              {{ currentMonth.getFullYear() }}
+            </h4>
+
+            <button
+              type="button"
+              class="calendar-nav-button"
+              [disabled]="isMaxMonth()"
+              (click)="nextMonth()"
+            >
+              ›
+            </button>
+          </div>
+
+          <div class="calendar-weekdays">
+            @for (weekDay of weekDays; track weekDay) {
+              <span>{{ weekDay }}</span>
+            }
+          </div>
+
+          <div class="calendar-grid">
+            @for (date of calendarDays; track $index) {
+              @if (date) {
+                <button
+                  type="button"
+                  class="calendar-day"
+                  [class.selected]="selectedDate === date"
+                  [class.past]="isPastDate(date)"
+                  [disabled]="isPastDate(date)"
+                  (click)="selectDate(date)"
+                >
+                  <span class="calendar-day-number">
+                    {{ date | date:'d' }}
+                  </span>
+                </button>
+              } @else {
+                <span class="calendar-empty"></span>
+              }
+            }
+          </div>
+
+        </div>
+
+
+        <!-- HORARIOS DISPONIBLES COMPACTOS -->
+        <div class="time-selection mini-times">
+          <h3>Horarios</h3>
+          
+          @if (selectedDate) {
+            <p class="selected-date">
+              <strong>{{ selectedDate | date:'EEEE d \'de\' MMMM' }}</strong>
+            </p>
+
+            @if (availableTimes.length > 0) {
+              <div class="time-grid mini-time-grid">
+                @for (time of availableTimes; track time) {
+                  <button
+                    type="button"
+                    class="time-button"
+                    [class.selected]="selectedTime === time"
+                    (click)="selectTimeAndOpenData(time)"
+                  >
+                    {{ time }}
+                  </button>
+                }
+              </div>
+            } @else {
+              <div class="no-times">
+                <span>✦</span>
+                <p>No hay horarios.</p>
+              </div>
+            }
+          } @else {
+            <div class="no-times select-date-prompt">
+              <span>📅</span>
+              <p>Selecciona un día del calendario para ver los horarios disponibles.</p>
+            </div>
+          }
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+}
+
+
+<!-- =========================================
+     MODAL 2: DATOS DEL CLIENTE Y ENVÍO A WHATSAPP
+========================================== -->
+
+@if (isDataModalOpen && selectedTherapy && selectedDate && selectedTime) {
+
+  <div class="confirmation-overlay">
+
+    <div class="confirmation-modal compact-data-modal">
+
+      <button
+        type="button"
+        class="confirmation-close"
+        (click)="closeDataModal()"
+        aria-label="Cerrar"
+      >
+        ×
+      </button>
+
+      <div class="confirmation-icon">
+        ✧
+      </div>
+
+      <h3>Tus datos de contacto</h3>
+      <p class="confirmation-description">
+        Estás agendando <strong>{{ selectedTherapy.name }}</strong> para el <strong>{{ selectedDate | date:'d \'de\' MMMM' }}</strong> a las <strong>{{ selectedTime }}</strong>.
+      </p>
+
+
+      <!-- FORMULARIO -->
+      <div class="client-form mini-form">
+
+        <div class="form-group">
+          <label for="clientName">Nombre completo *</label>
+          <input id="clientName" type="text" placeholder="Tu nombre" [(ngModel)]="clientName">
+        </div>
+
+        <div class="form-group">
+          <label for="clientPhone">Teléfono (Obligatorio para WhatsApp) *</label>
+          <input id="clientPhone" type="tel" placeholder="Ej. 667 123 4567" [(ngModel)]="clientPhone">
+        </div>
+
+        <div class="form-group">
+          <label for="clientMessage">Mensaje adicional</label>
+          <textarea id="clientMessage" rows="2" placeholder="¿Algo que quieras comentar?" [(ngModel)]="clientMessage"></textarea>
+        </div>
+
+      </div>
+
+
+      <!-- BOTONES -->
+      <div class="confirmation-actions" style="margin-top: 15px;">
+        <button
+          type="button"
+          class="edit-button"
+          (click)="backToCalendarModal()"
+        >
+          ← Regresar
+        </button>
+
+        <button
+          type="button"
+          class="confirm-button"
+          (click)="submitAppointment()"
+        >
+          Agendar por WhatsApp <span>→</span>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+}
+
+</div>
+
+</section>

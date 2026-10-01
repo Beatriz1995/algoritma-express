@@ -1,0 +1,363 @@
+/* =========================================
+   SECCIÓN BENEFICIOS
+========================================= */
+
+.benefits-section {
+  width: 100%;
+
+  padding: 100px 100px; 
+
+  background:
+    linear-gradient(
+      110deg,
+      #32104b 0%,
+      #4b145c 42%,
+      #007f8c 100%
+    );
+
+  color: #ffffff;
+}
+
+
+/* =========================================
+   CONTENEDOR
+========================================= */
+
+.benefits-container {
+  width: min(1050px, 94%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   TÍTULO
+========================================= */
+
+.benefits-container h2 {
+  margin: 0 0 22px;
+
+  text-align: center; 
+
+  font-size: clamp(22px, 3vw, 30px);
+
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  letter-spacing: 0.5px;
+
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.benefits-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1.25fr
+    1fr;
+
+  gap: 14px;
+
+  align-items: stretch;
+}
+
+
+/* =========================================
+   TARJETAS
+========================================= */
+
+.benefit-card {
+  min-height: 145px;
+
+  padding: 18px 14px;
+
+  border-radius: 7px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 9px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================
+   COLORES DE LAS TARJETAS
+========================================= */
+
+.chakras-card {
+  background: rgba(121, 45, 128, 0.82);
+}
+
+.geometry-card {
+  background: rgba(54, 50, 125, 0.88);
+}
+
+.energy-card {
+  background: rgba(0, 166, 165, 0.82);
+}
+
+
+/* =========================================
+   TÍTULOS DE TARJETAS
+========================================= */
+
+.benefit-card h3 {
+  margin: 0 0 15px;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  text-transform: capitalize;
+}
+
+
+/* =========================================
+   CHAKRAS
+========================================= */
+
+.chakra-icons {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 20px;
+}
+
+.chakra-item {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 5px;
+
+  font-size: 12px;
+}
+
+.chakra-symbol {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  border-radius: 50%;
+
+  font-size: 22px;
+}
+
+
+/* =========================================
+   GEOMETRÍA SAGRADA
+========================================= */
+
+.geometry-icons {
+  width: 100%;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: center;
+
+  gap: 17px;
+}
+
+.geometry-item {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 5px;
+
+  font-size: 12px;
+}
+
+.geometry-symbol {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  border-radius: 50%;
+
+  font-size: 20px;
+}
+
+
+/* =========================================
+   TERAPIA ENERGÉTICA
+========================================= */
+
+.energy-content {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 6px;
+
+  font-size: 12px;
+
+  line-height: 1.25;
+}
+
+.energy-symbol {
+  width: 43px;
+  height: 43px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.85);
+
+  border-radius: 50%;
+
+  font-size: 25px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+  .benefits-section {
+    padding: 25px 12px 30px;
+  }
+
+  .benefits-grid {
+    gap: 10px;
+  }
+
+  .benefit-card {
+    min-height: 135px;
+
+    padding: 14px 8px;
+  }
+
+  .benefit-card h3 {
+    font-size: 13px;
+  }
+
+  .chakra-icons {
+    gap: 10px;
+  }
+
+  .geometry-icons {
+    gap: 8px;
+  }
+
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 600px) {
+
+  .benefits-section {
+    padding: 23px 10px 28px;
+  }
+
+  .benefits-container {
+    width: 96%;
+  }
+
+  .benefits-container h2 {
+    font-size: 21px;
+
+    margin-bottom: 17px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .benefit-card {
+    min-height: 125px;
+
+    border-radius: 8px;
+  }
+
+  .benefit-card h3 {
+    font-size: 15px;
+  }
+
+  .chakra-icons {
+    gap: 25px;
+  }
+
+  .geometry-icons {
+    gap: 25px;
+  }
+
+}
+
+
+/* =========================================
+   CELULAR PEQUEÑO
+========================================= */
+
+@media (max-width: 380px) {
+
+  .benefits-container h2 {
+    font-size: 19px;
+  }
+
+  .benefit-card {
+    min-height: 115px;
+  }
+
+}

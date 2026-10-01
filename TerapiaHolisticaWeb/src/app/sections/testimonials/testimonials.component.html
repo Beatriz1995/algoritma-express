@@ -1,0 +1,79 @@
+<section class="testimonials-section">
+
+  <div class="testimonials-container">
+
+    <!-- TÍTULO -->
+    <h2>
+      Testimonios
+    </h2>
+
+
+    <!-- CARRUSEL -->
+    <div class="testimonials-carousel">
+
+      <!-- BOTÓN ANTERIOR -->
+      <button
+        class="carousel-button previous-button"
+        type="button"
+        aria-label="Testimonio anterior"
+        (click)="previous()"
+      >
+        ‹
+      </button>
+
+
+      <!-- TESTIMONIOS -->
+      <div class="testimonials-grid">
+
+        @for (testimonial of visibleTestimonials; track $index) {
+
+          <article class="testimonial-card">
+
+            <div class="testimonial-bubble">
+
+              <p>
+                {{ testimonial.text }}
+              </p>
+
+            </div>
+
+            <div class="testimonial-arrow"></div>
+
+            <span class="testimonial-author">
+              {{ testimonial.author }}
+            </span>
+
+          </article>
+
+        }
+
+      </div>
+
+
+      <!-- BOTÓN SIGUIENTE -->
+      <button
+        class="carousel-button next-button"
+        type="button"
+        aria-label="Siguiente testimonio"
+        (click)="next()"
+      >
+        ›
+      </button>
+
+    </div>
+
+    <!-- 👉 ENLACE A GOOGLE MAPS -->
+    <div class="testimonials-footer" style="text-align: center; margin-top: 2rem;">
+      <a 
+        href="https://www.google.com/maps/place/NS+Terapia+Holistica+y+Masajes+Terapeuticos/@23.2470905,-106.3914635,19z/data=!4m6!3m5!1s0x869f530069f2ee2d:0x5e06ffd493518f1c!8m2!3d23.2470828!4d-106.3917652!16s%2Fg%2F11ln04jy2g?entry=ttu&g_ep=EgoyMDI2MDkyOC4wIKXMDSoASAFQAw%3D%3D" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="google-maps-link"
+      >
+        Ver todas las reseñas en Google Maps ⭐
+      </a>
+    </div>
+
+  </div>
+
+</section>

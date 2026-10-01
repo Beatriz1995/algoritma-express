@@ -1,0 +1,376 @@
+/* =========================================
+   TESTIMONIOS
+========================================= */
+
+.testimonials-section {
+  width: 100%;
+
+  padding: 100px 100px;
+
+    background: rgb(238, 231, 231);
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   CONTENEDOR
+========================================= */
+
+.testimonials-container {
+  width: min(1050px, 94%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   TÍTULO
+========================================= */
+
+.testimonials-container h2 {
+  margin: 0 0 20px;
+
+  padding-top: 0;
+
+  text-align: center;
+
+
+  font-size: clamp(25px, 4vw, 32px);
+
+  font-weight: 500;
+
+  letter-spacing: 3px;
+
+  color: #765177;
+}
+
+
+/* =========================================
+   CARRUSEL
+========================================= */
+
+.testimonials-carousel {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.testimonials-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 18px;
+
+  align-items: start;
+}
+
+
+/* =========================================
+   TARJETA
+========================================= */
+
+.testimonial-card {
+  position: relative;
+
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  border-color: #9333ea;
+}
+
+
+/* =========================================
+   BURBUJA
+========================================= */
+
+.testimonial-bubble {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 92px;
+
+  padding: 18px 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border-radius: 8px;
+
+  border-color: #9333ea;
+  box-shadow:
+    0 3px 12px rgba(156, 18, 156, 0.16);
+}
+
+.testimonial-bubble p {
+  margin: 0;
+
+
+  font-size: 12px;
+
+  line-height: 1.45;
+
+  color: #050505;
+}
+
+
+/* =========================================
+   PUNTA DE LA BURBUJA
+========================================= */
+
+.testimonial-arrow {
+  width: 0;
+  height: 0;
+
+  margin-top: -1px;
+
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+
+  border-top: 12px solid #ffffffc5;
+
+  filter:
+    drop-shadow(
+      0 3px 2px rgba(80, 50, 80, 0.08)
+    );
+}
+
+
+/* =========================================
+   AUTOR
+========================================= */
+
+.testimonial-author {
+  margin-top: 7px;
+
+
+  font-size: 12px;
+
+  color: #030303;
+}
+
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.carousel-button {
+  width: 30px;
+  height: 30px;
+
+  flex: 0 0 30px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #765177;
+
+  color: #ffffff;
+
+  font-size: 23px;
+
+  line-height: 25px;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.carousel-button:hover {
+  background: #5d3c5e;
+
+  transform: scale(1.08);
+}
+
+
+/* =========================================
+   INDICADORES
+========================================= */
+
+.carousel-dots {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 17px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #cdbecd;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.dot.active {
+  background: #765177;
+
+  transform: scale(1.35);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+  .testimonials-container {
+    width: 96%;
+  }
+
+  .testimonials-grid {
+    gap: 10px;
+  }
+
+  .testimonial-bubble {
+    min-height: 100px;
+
+    padding: 14px 10px;
+  }
+
+  .testimonial-bubble p {
+    font-size: 10px;
+  }
+
+  .carousel-button {
+    width: 25px;
+    height: 25px;
+
+    flex-basis: 25px;
+
+    font-size: 19px;
+  }
+
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 600px) {
+
+  .testimonials-section {
+    padding: 0 10px 22px;
+  }
+
+  .testimonials-container h2 {
+    margin-bottom: 17px;
+
+    font-size: 24px;
+
+    letter-spacing: 2px;
+  }
+
+  .testimonials-carousel {
+    gap: 5px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-bubble {
+    width: min(100%, 300px);
+
+    min-height: 90px;
+
+    padding: 15px;
+  }
+
+  .testimonial-bubble p {
+    font-size: 11px;
+  }
+
+  .carousel-button {
+    width: 28px;
+    height: 28px;
+
+    flex-basis: 28px;
+  }
+
+}
+
+
+/* =========================================
+   CELULAR PEQUEÑO
+========================================= */
+
+@media (max-width: 380px) {
+
+  .testimonials-container h2 {
+    font-size: 22px;
+  }
+
+  .testimonial-bubble {
+    min-height: 85px;
+  }
+
+}
+
+
+/* Estilo base del enlace de Google Maps */
+.google-maps-link {
+    color: #a855f7; /* Un tono lila / morado elegante (puedes ajustarlo si prefieres otro tono) */
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+/* Efecto Hover (cuando pasan el mouse por encima) */
+.google-maps-link:hover {
+    color: #9333ea; /* Un tono lila más oscuro o brillante al pasar el cursor */
+    text-decoration: underline; /* Opcional: le pone subrayado al pasar el mouse */
+    transform: translateY(-1px); /* Da un ligero efecto de elevación */
+}

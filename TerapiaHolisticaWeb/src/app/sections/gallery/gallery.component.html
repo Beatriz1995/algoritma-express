@@ -1,0 +1,120 @@
+<section class="gallery-section">
+
+  <div class="gallery-container">
+
+
+    <!-- ENCABEZADO -->
+
+    <div class="gallery-header">
+
+      <span class="gallery-decoration">
+        ✧
+      </span>
+
+      <h2>
+        Galería
+      </h2>
+
+      <p>
+        Un vistazo a nuestro espacio y a los momentos
+        que forman parte de este camino de bienestar.
+      </p>
+
+    </div>
+
+
+    <!-- GALERÍA -->
+
+    <div class="gallery-grid">
+
+      @for (item of images; track item.id) {
+
+        <article
+          class="gallery-card"
+          (click)="openImage(item)"
+        >
+
+          <img
+            [src]="item.image"
+            [alt]="item.title"
+            loading="lazy"
+          >
+
+
+          <div class="gallery-overlay">
+
+            <span class="gallery-category">
+              {{ item.category }}
+            </span>
+
+            <h3>
+              {{ item.title }}
+            </h3>
+
+            <span class="gallery-view">
+              Ver imagen →
+            </span>
+
+          </div>
+
+        </article>
+
+      }
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     MODAL DE IMAGEN
+========================================= -->
+
+@if (selectedImage) {
+
+  <div
+    class="gallery-modal"
+    (click)="closeImage()"
+  >
+
+    <div
+      class="gallery-modal-content"
+      (click)="$event.stopPropagation()"
+    >
+
+      <button
+        type="button"
+        class="gallery-close"
+        aria-label="Cerrar imagen"
+        (click)="closeImage()"
+      >
+        ×
+      </button>
+
+
+      <img
+        [src]="selectedImage.image"
+        [alt]="selectedImage.title"
+      >
+
+
+      <div class="modal-caption">
+
+        <span>
+          {{ selectedImage.category }}
+        </span>
+
+        <h3>
+          {{ selectedImage.title }}
+        </h3>
+
+      </div>
+
+    </div>
+
+  </div>
+
+}

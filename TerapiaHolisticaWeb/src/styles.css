@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'tailwindcss';
+
+/* Aplica la tipografía moderna a absolutamente toda la página */
+body {
+     font-family: 'Montserrat', sans-serif;
+    font-size: 16px; /* Define un tamaño base general más cómodo */
+    color: #374151;  /* Un gris oscuro general para una lectura suave */
+}
+
+/* Opcional: Asegura que los títulos y textos hereden bien la fuente */
+h1, h2, h3, h4, h5, h6, p, span, a, button {
+    font-family: inherit;
+}

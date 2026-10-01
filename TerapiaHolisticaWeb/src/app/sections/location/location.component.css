@@ -1,0 +1,328 @@
+/* =========================================
+   UBICACIÓN
+========================================= */
+
+.location-section {
+  width: 100%;
+
+  padding: 100px 100px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f7f1f7 100%
+    );
+
+  color: #403640;
+}
+
+
+/* =========================================
+   CONTENEDOR
+========================================= */
+
+.location-container {
+  width: min(1050px, 94%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   ENCABEZADO
+========================================= */
+
+.location-header {
+  margin-bottom: 35px;
+
+  text-align: center;
+}
+
+.location-decoration {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #805080;
+
+  font-size: 23px;
+}
+
+.location-header h2 {
+  margin: 0;
+
+  font-size: clamp(28px, 4vw, 37px);
+
+  font-weight: 500;
+
+  letter-spacing: 1px;
+
+  color: #654666;
+}
+
+.location-header p {
+  width: min(650px, 95%);
+
+  margin: 12px auto 0;
+
+  color: #756b75;
+
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   CONTENIDO
+========================================= */
+
+.location-content {
+  display: grid;
+
+  grid-template-columns:
+    0.9fr 1.1fr;
+
+  gap: 25px;
+
+  align-items: stretch;
+}
+
+
+/* =========================================
+   INFORMACIÓN
+========================================= */
+
+.location-info {
+  padding: 28px;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 5px 20px
+    rgba(70, 40, 70, 0.09);
+}
+
+
+.location-item {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 14px;
+
+  margin-bottom: 23px;
+}
+
+
+.location-icon {
+  flex-shrink: 0;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f1e7f1;
+
+  font-size: 18px;
+}
+
+
+.location-item h3 {
+  margin: 0 0 5px;
+
+  color: #654666;
+
+
+  font-size: 17px;
+
+  font-weight: 500;
+}
+
+
+.location-item p {
+  margin: 0;
+
+  color: #756b75;
+
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   BOTÓN
+========================================= */
+
+.location-button {
+  width: 100%;
+
+  margin-top: 5px;
+
+  padding: 12px 18px;
+
+  border: none;
+
+  border-radius: 25px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #755078,
+      #178e8e
+    );
+
+  color: #ffffff;
+
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+.location-button:hover {
+  transform: translateY(-2px);
+
+  opacity: 0.9;
+}
+
+
+/* =========================================
+   MAPA
+========================================= */
+
+.location-map {
+  min-height: 350px;
+
+  overflow: hidden;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 5px 20px
+    rgba(70, 40, 70, 0.09);
+}
+
+
+.location-map {
+  min-height: 350px;
+
+  overflow: hidden;
+
+  border-radius: 12px;
+
+  background: #eee;
+
+  box-shadow:
+    0 5px 20px
+    rgba(70, 40, 70, 0.09);
+}
+
+.location-map iframe {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 350px;
+
+  border: 0;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 750px) {
+
+  .location-content {
+    grid-template-columns: 1fr;
+  }
+
+  .location-map {
+    min-height: 300px;
+  }
+
+  .location-map iframe {
+    min-height: 300px;
+  }
+
+}
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 600px) {
+
+  .location-section {
+    padding: 42px 10px 48px;
+  }
+
+  .location-container {
+    width: 96%;
+  }
+
+  .location-header {
+    margin-bottom: 25px;
+  }
+
+  .location-header h2 {
+    font-size: 27px;
+  }
+
+  .location-header p {
+    font-size: 10px;
+  }
+
+  .location-info {
+    padding: 20px 17px;
+  }
+
+  .location-item {
+    gap: 11px;
+
+    margin-bottom: 18px;
+  }
+
+  .location-icon {
+    width: 36px;
+    height: 36px;
+
+    font-size: 15px;
+  }
+
+  .location-item h3 {
+    font-size: 15px;
+  }
+
+  .location-item p {
+    font-size: 10px;
+  }
+
+  .location-button {
+    font-size: 10px;
+
+    padding: 11px 15px;
+  }
+
+}

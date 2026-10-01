@@ -1,0 +1,132 @@
+<section class="services-section">
+
+  <div class="services-container">
+
+    <!-- ENCABEZADO -->
+
+    <div class="services-header">
+
+      <span class="services-decoration">
+        ✧
+      </span>
+
+      <h2>
+        Nuestras Terapias
+      </h2>
+
+      <p>
+        Espacios creados para acompañarte en tu
+        camino hacia el bienestar, equilibrio y armonía.
+      </p>
+
+    </div>
+
+
+    <!-- TARJETAS -->
+
+    <div class="services-grid">
+
+      @for (therapy of therapies; track therapy.id) {
+
+        <article
+          class="service-card"
+          [class.selected]="selectedTherapy?.id === therapy.id"
+        >
+
+          <!-- ICONO -->
+
+          <div class="service-icon">
+            {{ therapy.icon }}
+          </div>
+
+
+          <!-- NOMBRE -->
+
+          <h3>
+            {{ therapy.name }}
+          </h3>
+
+
+          <!-- DESCRIPCIÓN CORTA -->
+
+          <p class="service-short-description">
+            {{ therapy.shortDescription }}
+          </p>
+
+
+          <!-- DURACIÓN -->
+
+          <span class="service-duration">
+            {{ therapy.duration }}
+          </span>
+
+
+          <!-- BOTÓN -->
+
+          <button
+            type="button"
+            class="service-button"
+            (click)="selectTherapy(therapy)"
+          >
+            Ver más
+            <span>→</span>
+          </button>
+
+        </article>
+
+      }
+
+    </div>
+
+
+    <!-- MODAL DE DETALLE -->
+
+    @if (selectedTherapy) {
+
+      <div class="service-modal-overlay" (click)="clearSelection()">
+
+        <div class="service-modal-content" (click)="$event.stopPropagation()">
+
+          <button
+            type="button"
+            class="close-detail"
+            aria-label="Cerrar detalle"
+            (click)="clearSelection()"
+          >
+            ×
+          </button>
+
+          <div class="detail-icon">
+            {{ selectedTherapy.icon }}
+          </div>
+
+          <div class="detail-content">
+
+            <span class="detail-label">
+              TERAPIA
+            </span>
+
+            <h3>
+              {{ selectedTherapy.name }}
+            </h3>
+
+            <p>
+              {{ selectedTherapy.description }}
+            </p>
+
+            <span class="detail-duration">
+              Duración aproximada:
+              {{ selectedTherapy.duration }}
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    }
+
+  </div>
+
+</section>

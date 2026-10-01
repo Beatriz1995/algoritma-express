@@ -1,0 +1,95 @@
+<section class="faq-section">
+
+  <div class="faq-container">
+
+
+    <!-- ENCABEZADO -->
+
+    <div class="faq-header">
+
+      <span class="faq-decoration">
+        ✧
+      </span>
+
+      <h2>
+        Preguntas Frecuentes
+      </h2>
+
+      <p>
+        Encuentra respuestas a algunas de las preguntas
+        más comunes sobre nuestras terapias.
+      </p>
+
+    </div>
+
+
+    <!-- PREGUNTAS -->
+
+    <div class="faq-list">
+
+      @for (faq of faqs; track faq.id) {
+
+        <article
+          class="faq-item"
+          [class.active]="openFaq === faq.id"
+        >
+
+          <button
+            type="button"
+            class="faq-question"
+            (click)="toggleFaq(faq.id)"
+            [attr.aria-expanded]="openFaq === faq.id"
+          >
+
+            <span>
+              {{ faq.question }}
+            </span>
+
+            <span class="faq-icon">
+              {{ openFaq === faq.id ? '−' : '+' }}
+            </span>
+
+          </button>
+
+
+          @if (openFaq === faq.id) {
+
+            <div class="faq-answer">
+
+              <p>
+                {{ faq.answer }}
+              </p>
+
+            </div>
+
+          }
+
+        </article>
+
+      }
+
+    </div>
+
+
+    <!-- CONTACTO -->
+
+    <div class="faq-contact">
+
+      <p>
+        ¿Tienes alguna otra pregunta?
+      </p>
+
+      <a
+        href="https://wa.me/526691648819"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Escríbenos por WhatsApp
+      </a>
+
+    </div>
+
+
+  </div>
+
+</section>
