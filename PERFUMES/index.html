@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Pura Escencia - Decants en Culiacán
+    </title>
+    <link rel="icon" type="image/png" href="img/LOGO.ico">
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <!-- Google Fonts -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="main-header">
+
+    <div class="header-container">
+
+        <a href="#" class="logo">
+            <img
+                src="img/LOGO.jpg"
+                alt="Pura Esencia Logo"
+                class="logo-img"
+            >
+        </a>
+
+        <!-- BOTÓN DE LAS 3 RAYITAS (HAMBURGUESA) -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- NAVEGACIÓN -->
+        <nav class="nav-menu" id="navMenu">
+
+            <a href="#catalogo" class="nav-link">Perfumes</a>
+            <a href="#ocasiones" class="nav-link">Ocasiones</a>
+            <a href="#faq" class="nav-link">Preguntas Frecuentes</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section
+    class="hero-section hero-banner-bg"
+>
+
+    <div class="hero-content">
+
+        <h1 class="hero-title">
+
+            Encuentra los decants de <br>
+            tus perfumes favoritos <br>
+            en Culiacán
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            En Pura Escencia encontrarás los aromas de tus
+            perfumes favoritos en decants de 5 ml,
+            para que conozcas la esencia antes de comprar.
+
+        </p>
+
+
+        <a
+    href="https://wa.me/526673261707?text=Hola,%20quiero%20ver%20el%20cat%C3%A1logo%20completo%20de%20perfumes."
+    class="btn-primary"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    Solicitar catálogo
+</a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CATÁLOGO
+========================================================= -->
+
+<section class="filters-section" style="padding-top: 50px;">
+
+        <!-- FILTROS DE GÉNERO -->
+
+    <div class="gender-filters">
+
+        <button
+            class="gender-btn"
+            data-gender="unisex"
+        >
+            Unisex
+        </button>
+
+
+        <button
+            class="gender-btn active"
+            data-gender="caballero"
+        >
+            Caballero
+        </button>
+
+
+        <button
+            class="gender-btn"
+            data-gender="dama"
+        >
+            Dama
+        </button>
+
+    </div>
+
+</section>
+
+<section
+    id="catalogo"
+    class="catalog-section"
+    style="padding-top: 30px;"
+>
+
+
+
+
+
+    <!-- ENCABEZADO -->
+
+    <div class="section-header">
+
+        <h2
+            class="section-title"
+            id="genderTitle"
+        >
+            El perfume ideal para “Él”
+        </h2>
+
+
+        <p class="section-subtitle">
+
+            Los perfumes
+
+            <span id="selectedCategoryText">
+                “Frescos”
+            </span>
+
+            más comprados en los últimos 30 días.
+
+        </p>
+
+    </div>
+
+
+
+    <!-- CARRUSEL -->
+
+    <div class="carousel-wrapper">
+
+
+        <button
+            class="carousel-arrow prev"
+            id="prevBtn"
+            aria-label="Anterior"
+            type="button"
+        >
+
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+            >
+
+                <line
+                    x1="19"
+                    y1="12"
+                    x2="5"
+                    y2="12"
+                ></line>
+
+                <polyline
+                    points="12 19 5 12 12 5"
+                ></polyline>
+
+            </svg>
+
+        </button>
+
+
+
+        <!-- PRODUCTOS GENERADOS POR JAVASCRIPT -->
+
+        <div
+            class="products-grid"
+            id="productsGrid"
+        ></div>
+
+
+
+        <button
+            class="carousel-arrow next"
+            id="nextBtn"
+            aria-label="Siguiente"
+            type="button"
+        >
+
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+            >
+
+                <line
+                    x1="5"
+                    y1="12"
+                    x2="19"
+                    y2="12"
+                ></line>
+
+                <polyline
+                    points="12 5 19 12 12 19"
+                ></polyline>
+
+            </svg>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     OCASIONES
+========================================================= -->
+
+<section
+    class="occasion-section"
+    id="ocasiones"
+>
+
+    <div class="occasion-container">
+
+
+        <div class="section-header">
+
+            <h2 class="section-title">
+                Compra según la ocasión
+            </h2>
+
+            <p class="section-subtitle">
+                Lleva tu perfume indicado al lugar correcto
+            </p>
+
+        </div>
+
+
+
+        <div class="occasion-carousel-wrapper">
+
+
+            <button
+                class="carousel-arrow prev"
+                id="occasionPrevBtn"
+                aria-label="Ocasión anterior"
+                type="button"
+            >
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+
+                    <line
+                        x1="19"
+                        y1="12"
+                        x2="5"
+                        y2="12"
+                    ></line>
+
+                    <polyline
+                        points="12 19 5 12 12 5"
+                    ></polyline>
+
+                </svg>
+
+            </button>
+
+
+            <div
+                class="occasion-grid"
+                id="occasionGrid"
+            >
+
+
+                <div
+                    class="occasion-card"
+                    data-occasion="fiesta"
+                >
+
+                    <div class="occasion-image-box">
+
+                        <img
+                            src="img/ocasion-fiesta.jpg"
+                            alt="Perfumes para fiesta"
+                        >
+
+                    </div>
+
+                    <h3 class="occasion-name">
+                        Fiesta
+                    </h3>
+
+                </div>
+
+
+
+                <div
+                    class="occasion-card active"
+                    data-occasion="oficina"
+                >
+
+                    <div class="occasion-image-box">
+
+                        <img
+                            src="img/ocasion-oficina.jpg"
+                            alt="Perfumes para oficina"
+                        >
+
+                    </div>
+
+                    <h3 class="occasion-name">
+                        Oficina
+                    </h3>
+
+                </div>
+
+
+
+                <div
+                    class="occasion-card"
+                    data-occasion="citas"
+                >
+
+                    <div class="occasion-image-box">
+
+                        <img
+                            src="img/ocasion-citas.jpg"
+                            alt="Perfumes para citas"
+                        >
+
+                    </div>
+
+                    <h3 class="occasion-name">
+                        Citas
+                    </h3>
+
+                </div>
+
+
+            </div>
+
+
+            <button
+                class="carousel-arrow next"
+                id="occasionNextBtn"
+                aria-label="Ocasión siguiente"
+                type="button"
+            >
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+
+                    <line
+                        x1="5"
+                        y1="12"
+                        x2="19"
+                        y2="12"
+                    ></line>
+
+                    <polyline
+                        points="12 5 19 12 12 19"
+                    ></polyline>
+
+                </svg>
+
+            </button>
+
+        </div>
+
+
+
+        <div
+            class="occasion-products-grid"
+            id="occasionProductsGrid"
+        ></div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PREGUNTAS FRECUENTES
+========================================================= -->
+
+<section
+    class="faq-section"
+    id="faq"
+>
+
+    <div class="faq-container">
+
+
+        <div class="faq-header">
+
+            <h2 class="faq-title">
+                PREGUNTAS FRECUENTES
+            </h2>
+
+        </div>
+
+
+
+        <div class="faq-list">
+
+
+            <div class="faq-item active">
+
+                <button
+                    class="faq-question"
+                    type="button"
+                >
+
+                    <span>
+                        ¿Los perfumes son 100% originales?
+                    </span>
+
+                    <span class="faq-icon">
+                        −
+                    </span>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+                        Sí, todos nuestros decants
+                        provienen directamente de distribuidores
+                        oficiales o frascos originales adquiridos
+                        de fuentes verificadas. No vendemos
+                        réplicas ni clones.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <button
+                    class="faq-question"
+                    type="button"
+                >
+
+                    <span>
+                        ¿Qué es un decant y cómo se prepara?
+                    </span>
+
+                    <span class="faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+                        Un decant es una muestra fraccionada
+                        extraída directamente del frasco original
+                        a un atomizador más pequeño. Usamos
+                        herramientas adecuadas para transferir
+                        el perfume sin alterar su aroma.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <button
+                    class="faq-question"
+                    type="button"
+                >
+
+                    <span>
+                        ¿Por qué el frasco del decant no es como el original?
+                    </span>
+
+                    <span class="faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+                        Los decants utilizan atomizadores de vidrio
+                        diseñados para almacenar pequeñas cantidades
+                        de perfume, permitiéndote probar una fragancia
+                        antes de comprar el frasco completo.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <button
+                    class="faq-question"
+                    type="button"
+                >
+
+                    <span>
+                        ¿Cuánto dura o cuántas atomizaciones rinde cada decant?
+                    </span>
+
+                    <span class="faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+                        Un decant de 5 ml puede proporcionar
+                        aproximadamente entre 70 y 80 atomizaciones,
+                        dependiendo de la cantidad aplicada en cada uso.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <button
+                    class="faq-question"
+                    type="button"
+                >
+
+                    <span>
+                        ¿Cómo debo almacenar mis decants para que no se arruinen?
+                    </span>
+
+                    <span class="faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+                        Guárdalos en un lugar fresco, seco y alejado
+                        de la luz solar directa y de cambios bruscos
+                        de temperatura. Evita dejarlos en el baño
+                        o dentro del automóvil.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <button
+                    class="faq-question"
+                    type="button"
+                >
+
+                    <span>
+                        ¿Tienen políticas de devolución si no me gusta el aroma?
+                    </span>
+
+                    <span class="faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+                        Por motivos de higiene y por la naturaleza
+                        del producto, no aceptamos devoluciones
+                        una vez abierto el empaque. Por eso los
+                        decants son una excelente opción para probar
+                        una fragancia antes de comprar el frasco completo.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="main-footer">
+    <div class="footer-container">
+        
+        <!-- Columna 1: Logo y descripción -->
+        <div class="footer-section footer-logo-col">
+            <div class="footer-logo-box">
+                <!-- ASEGÚRATE DE QUE ESTA RUTA DE LA IMAGEN SEA LA CORRECTA -->
+                <img src="img/LOGO.jpg" alt="Pura Esencia Logo">
+            </div>
+            <p class="footer-brand-desc">Tu perfume ideal, a un solo click.</p>
+        </div>
+
+        <!-- Columna 2: Catálogo -->
+        <div class="footer-section">
+            <h4>Catálogo completo</h4>
+            <a href="#perfumes">Todos los perfumes</a>
+        </div>
+
+        <!-- Columna 3: Puntos de recogida -->
+        <div class="footer-section">
+            <h4>Puntos de recogida</h4>
+            <a href="#">Culiacán Centro</a>
+            <a href="#">Plaza Forum</a>
+            <a href="#">Ley Abastos</a>
+            <a href="#">Alturas del Sur</a>
+        </div>
+
+        <!-- Columna 4: Horario -->
+        <div class="footer-section">
+            <h4>Horario</h4>
+            <p>Lunes a Sábado<br>02:00 PM - 6:00 PM</p>
+        </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+        &copy; 2026 Pura Esencia. Todos los derechos reservados.
+    </div>
+</footer>
+
+
+
+<!-- =========================================================
+     MODAL / CHECKOUT
+========================================================= -->
+
+<div
+    id="checkoutModal"
+    class="checkout-modal-overlay"
+>
+
+
+    <div class="checkout-modal">
+
+
+        <button
+            type="button"
+            class="checkout-close"
+            id="closeCheckout"
+            aria-label="Cerrar ventana"
+        >
+            &times;
+        </button>
+
+
+
+        <div class="checkout-header">
+
+            <span class="checkout-step">
+                FINALIZAR COMPRA
+            </span>
+
+            <h2>
+                Confirma tu pedido
+            </h2>
+
+            <p>
+                Revisa los detalles de tu decant y completa
+                tus datos para realizar el pedido.
+            </p>
+
+        </div>
+
+
+
+        <div class="checkout-content">
+
+
+            <div class="checkout-product">
+
+
+                <div class="checkout-product-image">
+
+                    <img
+                        id="checkoutImage"
+                        src=""
+                        alt="Perfume seleccionado"
+                    >
+
+                </div>
+
+
+
+                <div class="checkout-product-info">
+
+
+                    <span class="checkout-label">
+                        PRODUCTO SELECCIONADO
+                    </span>
+
+
+                    <h3 id="checkoutName">
+                        Nombre del perfume
+                    </h3>
+
+
+                    <p
+                        id="checkoutPrice"
+                        class="checkout-price"
+                    >
+                        $0.00 MXN
+                    </p>
+
+
+                    <p
+                        id="checkoutDescription"
+                        class="checkout-description"
+                    >
+                        Descripción del perfume.
+                    </p>
+
+
+
+                    <div class="checkout-quantity">
+
+                        <label>
+                            Cantidad
+                        </label>
+
+
+                        <div class="quantity-control">
+
+
+                            <button
+                                type="button"
+                                id="quantityMinus"
+                                aria-label="Disminuir cantidad"
+                            >
+                                −
+                            </button>
+
+
+                            <span id="quantityValue">
+                                1
+                            </span>
+
+
+                            <button
+                                type="button"
+                                id="quantityPlus"
+                                aria-label="Aumentar cantidad"
+                            >
+                                +
+                            </button>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="perfume-details">
+
+
+                <div class="perfume-detail-header">
+
+                    <h3>
+                        Sobre esta fragancia
+                    </h3>
+
+                </div>
+
+
+
+                <div class="perfume-review">
+
+                    <span class="detail-label">
+                        ¿A qué huele?
+                    </span>
+
+
+                    <p id="checkoutReview">
+                        Una fragancia elegante y versátil.
+                    </p>
+
+                </div>
+
+
+
+                <div class="fragrance-notes">
+
+                    <span class="detail-label">
+                        NOTAS OLFATIVAS
+                    </span>
+
+
+                    <div class="notes-grid">
+
+
+                        <div class="note-item">
+
+                            <span class="note-title">
+                                Salida
+                            </span>
+
+
+                            <p id="checkoutTopNotes">
+                                Información no disponible
+                            </p>
+
+                        </div>
+
+
+
+                        <div class="note-item">
+
+                            <span class="note-title">
+                                Corazón
+                            </span>
+
+
+                            <p id="checkoutHeartNotes">
+                                Información no disponible
+                            </p>
+
+                        </div>
+
+
+
+                        <div class="note-item">
+
+                            <span class="note-title">
+                                Fondo
+                            </span>
+
+
+                            <p id="checkoutBaseNotes">
+                                Información no disponible
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="perfume-specs">
+
+
+                    <div>
+
+                        <span class="detail-label">
+                            CONCENTRACIÓN
+                        </span>
+
+
+                        <strong id="checkoutConcentration">
+                            Información no disponible
+                        </strong>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <span class="detail-label">
+                            DURACIÓN
+                        </span>
+
+
+                        <strong id="checkoutDuration">
+                            Información no disponible
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <form id="purchaseForm">
+
+
+                <div class="checkout-section">
+
+                    <h3>
+                        1. Tus datos
+                    </h3>
+
+
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label for="purchaseName">
+                                Nombre completo
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="purchaseName"
+                                placeholder="Ej. Juan Pérez"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="purchasePhone">
+                                WhatsApp
+                            </label>
+
+
+                            <input
+                                type="tel"
+                                id="purchasePhone"
+                                placeholder="Ej. 667 123 4567"
+                                autocomplete="tel"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="checkout-section">
+
+                    <h3>
+                        2. ¿Dónde recogerás tu pedido?
+                    </h3>
+
+
+                    <div class="pickup-options">
+
+
+                        <label class="pickup-option">
+
+                            <input
+                                type="radio"
+                                name="pickup"
+                                value="Culiacán Centro"
+                                required
+                            >
+
+
+                            <div class="pickup-card">
+
+                                <div class="pickup-icon">
+                                    📍
+                                </div>
+
+
+                                <div>
+
+                                    <strong>
+                                        Culiacán Centro
+                                    </strong>
+
+                                    <span>
+                                        Punto de recogida
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </label>
+
+
+
+                        <label class="pickup-option">
+
+                            <input
+                                type="radio"
+                                name="pickup"
+                                value="Plaza Forum"
+                            >
+
+
+                            <div class="pickup-card">
+
+                                <div class="pickup-icon">
+                                    📍
+                                </div>
+
+
+                                <div>
+
+                                    <strong>
+                                        Plaza Forum
+                                    </strong>
+
+                                    <span>
+                                        Punto de recogida
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </label>
+
+
+
+                        <label class="pickup-option">
+
+                            <input
+                                type="radio"
+                                name="pickup"
+                                value="Ley Abastos"
+                            >
+
+
+                            <div class="pickup-card">
+
+                                <div class="pickup-icon">
+                                    📍
+                                </div>
+
+
+                                <div>
+
+                                    <strong>
+                                        Ley Abastos
+                                    </strong>
+
+                                    <span>
+                                        Punto de recogida
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </label>
+
+
+
+                        <label class="pickup-option">
+
+                            <input
+                                type="radio"
+                                name="pickup"
+                                value="Alturas del Sur"
+                            >
+
+
+                            <div class="pickup-card">
+
+                                <div class="pickup-icon">
+                                    📍
+                                </div>
+
+
+                                <div>
+
+                                    <strong>
+                                        Alturas del Sur
+                                    </strong>
+
+                                    <span>
+                                        Punto de recogida
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </label>
+
+
+                    </div>
+
+
+                    <p
+                        id="pickupError"
+                        class="pickup-error"
+                    >
+                        Selecciona un punto de recogida para continuar.
+                    </p>
+
+                </div>
+
+
+
+                <div class="checkout-total">
+
+                    <span>
+                        Total
+                    </span>
+
+
+                    <strong id="checkoutTotal">
+                        $0.00 MXN
+                    </strong>
+
+                </div>
+
+
+
+                <button
+                    type="submit"
+                    class="checkout-whatsapp-btn"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        width="21"
+                        height="21"
+                        fill="currentColor"
+                        aria-hidden="true"
+                    >
+
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.705 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+
+                    </svg>
+
+
+                    Confirmar pedido por WhatsApp
+
+                </button>
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     BOTÓN FLOTANTE WHATSAPP
+===================================== -->
+
+<a
+    href="https://wa.me/526673261707?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20sus%20perfumes."
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp"
+>
+
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 32 32"
+        width="28"
+        height="28"
+        fill="currentColor"
+    >
+        <path d="M16 .4C7.4.4.4 7.3.4 15.9c0 2.8.8 5.5 2.2 7.9L0 32l8.4-2.5c2.3 1.3 4.9 2 7.6 2 8.6 0 15.6-6.9 15.6-15.5S24.6.4 16 .4zm0 28.3c-2.3 0-4.5-.6-6.5-1.8l-.5-.3-5 .1 1.6-4.8-.3-.5c-1.3-2-2-4.3-2-6.7C3.3 8.9 8.9 3.3 16 3.3S28.7 8.9 28.7 16 23.1 28.7 16 28.7zm7.2-9.6c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.6-.2-.9.2-.2.4-1 1.2-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.2-.4.3-.6.1-.2 0-.5-.1-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.8c-.3 0-.7.1-1 .5-.3.4-1.3 1.3-1.3 3.2s1.4 3.7 1.6 4c.2.3 2.7 4.1 6.6 5.8.9.4 1.6.7 2.2.9.9.3 1.7.3 2.4.2.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.2-.4-.3-.8-.5z"/>
+    </svg>
+
+</a>
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script
+    src="js/script.js"
+></script>
+
+
+</body>
+</html>
