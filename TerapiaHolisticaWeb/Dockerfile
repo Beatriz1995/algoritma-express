@@ -11,8 +11,8 @@ RUN npm ci
 # Copiar el resto del código fuente
 COPY . .
 
-# Compilar usando npx para evitar problemas de permisos con el binario local
-RUN npx ng build --configuration production
+# Compilar usando el script estándar de npm
+RUN npm run build -- --configuration production
 
 # Etapa 2: Servir con Nginx
 FROM nginx:alpine
