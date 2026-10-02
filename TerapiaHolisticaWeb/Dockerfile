@@ -2,15 +2,17 @@
 FROM node:22-alpine AS build
 WORKDIR /app
 
-# Copiar archivos de dependencias desde la raíz del contexto actual
+# Copiar archivos de dependencias
 COPY package*.json ./
+
+# Instalar dependencias limpias
 RUN npm ci
 
 # Copiar el resto del código fuente
 COPY . .
 
-# Compilar para producción
-RUN npm run build -- --configuration production
+# Compilar usando npx para evitar problemas de permisos con el binario local
+RUN npx ng build --configuration production
 
 # Etapa 2: Servir con Nginx
 FROM nginx:alpine
