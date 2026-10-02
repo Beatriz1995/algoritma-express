@@ -2,12 +2,12 @@
 FROM node:22-alpine AS build
 WORKDIR /app
 
-# Copiar archivos de dependencias desde la carpeta del proyecto
-COPY TerapiaHolisticaWeb/package*.json ./
+# Copiar archivos de dependencias desde la raíz del contexto actual
+COPY package*.json ./
 RUN npm ci
 
-# Copiar todo el código fuente de la app
-COPY TerapiaHolisticaWeb/ ./
+# Copiar el resto del código fuente
+COPY . .
 
 # Compilar para producción
 RUN npm run build -- --configuration production
