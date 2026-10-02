@@ -11,8 +11,8 @@ RUN npm ci
 # Copiar el resto del código fuente
 COPY . .
 
-# Compilar usando el script estándar de npm
-RUN npm run build -- --configuration production
+# Compilar ejecutando directamente el archivo JS con Node (evita el error de permisos 126)
+RUN node node_modules/@angular/cli/bin/ng.js build --configuration production
 
 # Etapa 2: Servir con Nginx
 FROM nginx:alpine
